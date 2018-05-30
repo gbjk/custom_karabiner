@@ -1,0 +1,98 @@
+{
+  "title": "GBJK personal rules",
+  "rules": [
+    {
+      "description": "Mac internal keyboard Exchange hash and pound",
+      "manipulators": [
+        {
+             "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452,
+                  "product_id": 631
+                }
+              ]
+            }
+          ],
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": {
+              "mandatory": [ "shift" ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "non_us_pound",
+              "modifiers": [
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Datahand swap £ shift-3 and # option-3",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1000,
+                  "product_id": 100
+                }
+              ]
+            }
+          ],
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": {
+              "mandatory": [ "option" ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "3",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "3",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
